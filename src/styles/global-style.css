@@ -1,1 +1,29 @@
 @import url('./components/_all.css');
+
+.container {
+  margin: 5%;
+}
+
+.container .colum {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.container .card-styles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .card-styles .cards-content {
+  margin: 10px;
+}
+
+.text-not-found {
+  margin-top: 10%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #E6E6E6;
+}

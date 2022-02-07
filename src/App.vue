@@ -9,7 +9,7 @@
 export default {
   name: 'App',
   components: {
-    PrincipalComponent: () => import('@/components/Principal')
+    PrincipalComponent: () => import('@/pages/Principal/index')
   }
 }
 </script>
