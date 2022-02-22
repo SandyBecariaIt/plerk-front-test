@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import * as network from './network'
+import * as network from '@/utils/getInformation.js'
 
 export default {
   data () {

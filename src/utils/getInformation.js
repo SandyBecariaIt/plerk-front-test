@@ -1,4 +1,4 @@
-import { buildRequest } from './../../../utils/network'
+import { buildRequest } from './network'
 
 export async function getData() {
     const request = buildRequest('/category')
