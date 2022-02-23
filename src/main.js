@@ -1,9 +1,26 @@
-import Vue from 'vue'
+import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue'
 import './styles/global-style.css'
+import router from './router'
+import store from './store'
+import { domain, clientId } from "./auth_config.json";
 
-Vue.config.productionTip = false
+import { Auth0Plugin } from "./auth/index";
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+Vue.use(Auth0Plugin, {
+  domain,
+  clientId,
+  onRedirectCallback: appState => {
+    router.push(
+      appState && appState.targetUrl
+        ? appState.targetUrl
+        : window.location.pathname
+    );
+  }
+});
+
+createApp(App)
+  .use(router)
+  .use(store)
+  .mount("#app");

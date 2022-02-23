@@ -1,8 +1,14 @@
 <template>
   <div class="container">
     <div class="colum">
-      <div>
+      <div class="content-search">
         <search-component v-model="searchValue" />
+        <button
+          class="button"
+          @click="logout"
+        >
+          Cerrar sesión
+        </button>
       </div>
 
       <div v-if="!loader && secondArray.length > 0" class="colum card-styles">
@@ -29,7 +35,7 @@
 </template>
 
 <script>
-import * as network from './network'
+import * as network from '@/utils'
 
 export default {
   data () {
@@ -49,6 +55,12 @@ export default {
     this.getCategories()
   },
   methods: {
+    logout () {
+      this.$store.commit("setAuthentication", false)
+      this.$auth.logout({
+        returnTo: window.location.origin
+      });
+    },
     async getCategories () {
       this.loader = true
       const { data, status } = await network.getData()

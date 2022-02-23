@@ -7,7 +7,7 @@
 
       <div class="content-text">
         <p class="item item-name">{{ infoCard.name.esp }}</p>
-        <p class="item item-info">{{ currency(infoCard.suggested_budget || 0) }}</p>
+        <p class="item item-info">{{ currency(infoCard.suggested_budget || 0, 'USD') }}</p>
         <p class="item item-info">{{ choseCategory(infoCard.category_type) }}</p>
       </div>
 
@@ -59,8 +59,9 @@ export default {
 
       return category
     },
-    currency (number) {
-      return Intl.NumberFormat('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}).format(number);
+    currency (number, currency) {
+      const newDolar = number / 100
+      return `${Intl.NumberFormat('en-IN', {style: 'currency',currency: currency, minimumFractionDigits: 2}).format(newDolar)} ${currency === 'USD' ? 'USD' : ''}` 
     }
   }
 }
