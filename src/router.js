@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { authGuard } from './auth/authGuard'
+// import { authGuard } from './auth/authGuard'
 
 import Principal from './pages/Principal'
 import Login from './pages/Login'
@@ -35,7 +35,6 @@ const routes = [
     path: '/principal',
     name: 'principal',
     component: Principal,
-    beforeEnter: authGuard,
     meta: {
       title: 'Principal'
     }

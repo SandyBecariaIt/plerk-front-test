@@ -56,10 +56,9 @@ export default {
   },
   methods: {
     logout () {
-      this.$store.commit("setAuthentication", false)
       this.$auth.logout({
         returnTo: window.location.origin
-      });
+      })
     },
     async getCategories () {
       this.loader = true

@@ -3,7 +3,7 @@
     <label>Iniciar sesión</label>
 
     <form>
-      <div class="content-search">
+      <div class="content-search center-content">
         <input
           class="input"
           v-model="form.email"
@@ -54,7 +54,6 @@ export default {
   methods: {
     login () {
       this.$auth.loginWithRedirect();
-      this.$router.push('/principal')
     },
     forgetPassword () {
       this.$router.push('/forget-password')

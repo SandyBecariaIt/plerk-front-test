@@ -3,7 +3,7 @@
     <label>Iniciar sesión</label>
 
     <form>
-      <div class="content-search">
+      <div class="content-search center-content">
         <input
           class="input"
           v-model="password"

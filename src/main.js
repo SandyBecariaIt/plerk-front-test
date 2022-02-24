@@ -5,8 +5,7 @@ import './styles/global-style.css'
 import router from './router'
 import store from './store'
 import { domain, clientId } from "./auth_config.json";
-
-import { Auth0Plugin } from "./auth/index";
+import { Auth0Plugin } from "./auth";
 
 Vue.use(Auth0Plugin, {
   domain,
