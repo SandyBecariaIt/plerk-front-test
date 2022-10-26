@@ -1,6 +1,5 @@
 # plerk-front-test
 
--- Se utlizo Auth0 para la parte del login
 -- Los estilos se hicieron con css puro
 
 ### Compiles and minifies for could use .env
